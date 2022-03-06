@@ -1,0 +1,107 @@
+.nav1 {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px 0 25px;
+    background-color: #fff;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.nav1 .links a {
+    margin-right: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+.nav1 .links .mainlink {
+    color: #e0501b;
+}
+
+.nav1 h4 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 25px;
+    margin-bottom: 0px !important;
+}
+
+
+#preloader {
+    background: #000 url(https://cdnb.artstation.com/p/assets/images/images/007/510/273/original/klio-papadimitrou-klio-papadimitrou-loading.gif?1526832766) no-repeat center center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+
+}
+
+/* FOOTER CSS */
+
+.footer {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.footerlinks a {
+    margin: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+.footerlinks .mainlink {
+    color: #e0501b;
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 600px) {
+    .nav1 {
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 20px;
+        height: auto;
+        overflow-y: hidden;
+    }
+
+    .nav1 h4 {
+        font-size: 6vw;
+        margin-top: 10px;
+        margin-bottom: 14px;
+    }
+
+    .nav1 .links a {
+        margin-right: 25px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+ 
+
+    .footer {
+        padding-bottom: 40px;
+    }
+
+ 
+
+#preloader {
+    background: #000 url(https://cdnb.artstation.com/p/assets/images/images/007/510/273/original/klio-papadimitrou-klio-papadimitrou-loading.gif?1526832766) no-repeat center center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+
+}
+

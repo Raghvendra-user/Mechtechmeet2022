@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fitness Orbit</title>
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <script src="js/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+
+    <style>
+        [data-aos^='fade'][data-aos^='fade'].aos-animate {
+            transform: none;
+        }
+
+        html,
+        body {
+            background-color: #a7a7a7;
+            /* background-color: black; */
+            font-family: 'Source Sans Pro', sans-serif;
+            overflow-x: hidden !important;
+            margin: 0px !important;
+            padding: 0px !important;
+        }
+
+        * {
+            text-decoration: none !important;
+        }
+
+        .nav {
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 80px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px 0 25px;
+            background-color: #fff;
+            box-shadow: 0 19px 38px rgba(0, 0, 0, 0.1);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .nav .links a {
+            margin-right: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .nav .links .mainlink {
+            color: #e0501b;
+        }
+
+        .nav h4 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-left: 25px;
+        }
+
+        /* LANDING CSS */
+
+        .landing {
+            /* background-image: url("https://ak.picdn.net/shutterstock/videos/1023420274/thumb/1.jpg") ; */
+            /* background-image: url("https://videohive.img.customer.envatousercontent.com/files/5da147cd-f900-4817-8224-75fd0b204f65/inline_image_preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=c6a3dc53219311b079b476010c6f6866"); */
+            background-image: url("https://redrocketpanda.files.wordpress.com/2019/01/maxresdefault.jpg");
+            background-size: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10vw 0 10vw;
+            height: 100vh;
+        }
+
+        .landingText h1 {
+            font-size: 6vw;
+            margin: 0 !important;
+        }
+
+        .landingText h3 {
+            margin: 6px !important;
+            font-size: 20px;
+            opacity: 0.3;
+            line-height: 30px;
+        }
+
+        .landingText .btn {
+            width: 120px;
+            margin-top: 30px;
+            padding: 14px 20px 14px 20px;
+            background-color: #2f8be0;
+            border-radius: 45px;
+            text-align: center;
+        }
+
+        .landingText .btn a {
+            font-size: 1.2vw;
+            color: #fff;
+        }
+
+        .landingImage img {
+            width: 15vw;
+            float: left;
+        }
+
+        .landingImageContainer {
+            width: 50%;
+            /* margin-right: 50%; */
+            margin-right: -20%
+        }
+
+        /* ABOUT CSS */
+
+        .about {
+            height: 600px;
+            margin-top: 100px;
+            padding: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .aboutText {
+            position: relative;
+            padding: 0 50px;
+            height: inherit;
+        }
+
+        .aboutText h1 {
+            font-size: 42px;
+            position: relative;
+            left: 620px;
+            top: 55px;
+        }
+
+        .aboutText img {
+            width: 30vw;
+            position: absolute;
+            top: 85px;
+        }
+
+        .aboutList {
+            width: 50%;
+        }
+
+        ol {
+            list-style: none;
+            color: #e0501b;
+        }
+
+        ol li {
+            font-size: 34px;
+            position: relative;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ebebeb;
+        }
+
+        li p {
+            font-size: 16px;
+            color: #000;
+            padding-left: 60px;
+            line-height: 30px;
+            opacity: 0.6;
+        }
+
+        li span {
+            position: absolute;
+            line-height: 25px;
+            font-weight: 600;
+        }
+
+
+
+        /* FOOTER CSS */
+
+        .footer {
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        .footerlinks a {
+            margin: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .footerlinks .mainlink {
+            color: #e0501b;
+        }
+
+        /* RESPONSIVE */
+
+        @media only screen and (max-width: 600px) {
+            .nav {
+                flex-direction: column;
+                justify-content: space-around;
+                padding: 20px;
+                height: auto;
+                overflow-y: hidden;
+            }
+
+            .nav h4 {
+                font-size: 6vw;
+                margin-top: 10px;
+                margin-bottom: 14px;
+            }
+
+            .nav .links a {
+                margin-right: 25px;
+                font-size: 12px;
+                font-weight: 600;
+            }
+
+            /* LANDING PAGE */
+            .landing {
+                flex-direction: column-reverse;
+                height: 750px;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .landingText h1 {
+                font-size: 6vw;
+                margin: 0 !important;
+            }
+
+            .landingText h3 {
+                font-size: 16px;
+            }
+
+            .landingText .btn {
+                margin: 0 auto;
+            }
+
+            .landingText .btn a {
+                font-size: 3vw;
+            }
+
+            .landingImage img {
+                width: 45vw;
+                margin-bottom: 20px;
+            }
+
+            .landingImageContainer {
+                width: 100%;
+                margin-right: 50%"
+
+            }
+
+            /* ABOUT */
+            .about {
+                height: auto;
+                padding: 0px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .aboutText {
+                padding: 0 50px;
+                height: 100px;
+            }
+
+            .aboutText h1 {
+                left: 75px;
+                font-size: 9vw;
+                top: -15px;
+            }
+
+            .aboutText img {
+                width: 43vw;
+                top: 0px;
+                left: -50px;
+            }
+
+            .aboutList {
+                width: 75%;
+            }
+
+            ol li {
+                font-size: 26px;
+            }
+
+            li p {
+                font-size: 14px;
+            }
+
+
+            .footer {
+                padding-bottom: 40px;
+            }
+
+            /* 
+            
+           
+            */
+            /*  */
+            /*  */
+
+
+            /* -----Education Section CSS----- */
+
+            @media (max-width:766px) {
+                .dropdown1 {
+                    position: absolute;
+                    text-align: center;
+                    /* padding-right: 1.2rem; */
+                    z-index: 3;
+                }
+
+                .dropdown2 {
+                    position: absolute;
+                    text-align: center;
+                    padding-top: 7rem;
+                    z-index: 3;
+                }
+
+                .godown {
+                    position: absolute;
+                    z-index: 2;
+                    padding-top: 8rem;
+                }
+            }
+
+            .sect {
+                height: 140vh;
+                width: 100%;
+                background-size: cover;
+                background-position: center center;
+                background-attachment: fixed;
+                object-fit: fill;
+            }
+
+            .s2 {
+                overflow-x: hidden;
+            }
+
+            .s2 .head {
+                font-size: 2rem;
+            }
+
+            .s2 h4 {
+                margin-bottom: 1.2rem;
+            }
+
+            .qual {
+                margin-bottom: 2rem;
+            }
+
+            .s2 p {
+                margin-top: -0.5rem;
+                font-weight: 450;
+                font-size: 2.5vh;
+            }
+
+            .s2 .card img {
+                height: 90%;
+                width: 90%;
+            }
+
+            .s2 .card,
+            .s2 img {
+                border-radius: 3rem;
+            }
+
+            .s2 h4,
+            h6,
+            p {
+                color: black;
+            }
+
+            @media only screen and (max-width: 767px) {
+                .edSection {
+                    margin-top: 400px;
+                }
+            }
+
+            @media only screen and (max-width: 600px) {
+                .edSection {
+                    margin-top: 0px;
+                }
+            }
+
+
+
+
+
+            /* 
+
+ */
+            /*  */
+            /*  */
+            /*  */
+            #gallery {
+                padding-top: 40px;
+
+                @media screen and (min-width: 991px) {
+                    padding: 60px 30px 0 30px;
+                }
+            }
+
+            .img-wrapper {
+                position: relative;
+                margin-top: 15px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .img-overlay {
+            background: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+        }
+
+        i {
+            color: #fff;
+            font-size: 3em;
+        }
+
+
+        #overlay {
+            background: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        img {
+            margin: 0;
+            width: 80%;
+            height: auto;
+            object-fit: contain;
+            padding: 5%;
+
+            @media screen and (min-width:768px) {
+                width: 60%;
+            }
+
+            @media screen and (min-width:1200px) {
+                width: 50%;
+            }
+        }
+
+
+        #preloader {
+            background: #000 url(https://cdnb.artstation.com/p/assets/images/images/007/510/273/original/klio-papadimitrou-klio-papadimitrou-loading.gif?1526832766) no-repeat center center;
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            z-index: 100;
+
+        }
+
+
+        /* timer */
+        .timer {
+
+            align-items: center;
+            /* background-color: #ffd54f ; */
+            background-image: url(https://w7.pngwing.com/pngs/1006/404/png-transparent-symphony-background-poster-banner-science-and-technology-science-fiction.png);
+            display: flex;
+            height: 20%;
+            font-family: -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Oxygen-Sans,
+                Ubuntu,
+                Cantarell,
+                "Helvetica Neue",
+                sans-serif;
+        }
+
+        .timer .container {
+            color: rgb(255, 255, 255);
+            margin: 75px auto;
+            text-align: center;
+            -webkit-animation: glow 1s ease-in-out infinite alternate;
+            -moz-animation: glow 1s ease-in-out infinite alternate;
+            animation: flicker 1s ease-in-out infinite alternate;
+        }
+
+        @import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
+
+        :root {
+
+            /* Set neon color */
+            --neon-text-color: #f40;
+            --neon-border-color: #08f;
+        }
+
+        @keyframes flicker {
+
+            0%,
+            19%,
+            21%,
+            23%,
+            25%,
+            54%,
+            56%,
+            100% {
+
+                text-shadow:
+                    -0.2rem -0.2rem 1rem #fff,
+                    0.2rem 0.2rem 1rem #fff,
+                    0 0 2rem var(--neon-text-color),
+                    0 0 4rem var(--neon-text-color),
+                    0 0 6rem var(--neon-text-color),
+                    0 0 8rem var(--neon-text-color),
+                    0 0 10rem var(--neon-text-color);
+
+                box-shadow:
+                    0 0 .5rem #fff,
+                    inset 0 0 .5rem #fff,
+                    0 0 2rem var(--neon-border-color),
+                    inset 0 0 2rem var(--neon-border-color),
+                    0 0 4rem var(--neon-border-color),
+                    inset 0 0 4rem var(--neon-border-color);
+            }
+
+            20%,
+            24%,
+            55% {
+                text-shadow: none;
+                box-shadow: none;
+            }
+        }
+
+
+        @-webkit-keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+            }
+
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+            }
+        }
+
+        .timer h1 {
+            font-weight: normal;
+            letter-spacing: .125rem;
+            text-transform: uppercase;
+        }
+
+        .timer li {
+            display: inline-block;
+            font-size: 1.5em;
+            list-style-type: none;
+            padding: 1em;
+            text-transform: uppercase;
+        }
+
+        .timer li span {
+            display: block;
+            font-size: 4.5rem;
+            position: unset !important;
+            display: inline-flex;
+        }
+
+
+
+        @media all and (max-width: 768px) {
+            .timer h1 {
+                font-size: calc(1.5rem * var(--smaller));
+            }
+
+            .timer li {
+                display: table-cell;
+                font-size: calc(1.125rem * var(--smaller));
+                padding-left: 5px;
+            }
+
+            .timer li span {
+                font-size: calc(3.375rem * var(--smaller));
+            }
+        }
+
+
+        /*  */
+        /*  */
+        /* glitch */
+
+        .hero {
+            font-size: clamp(40px, 10vw, 100px);
+            line-height: 1;
+            display: inline-block;
+            color: #fff;
+            z-index: 2;
+            letter-spacing: 10px;
+
+            /* Bright things in dark environments usually cast that light, giving off a glow */
+            filter: drop-shadow(0 1px 3px);
+        }
+
+        .demo {
+            height: 100px;
+            background: #fff;
+        }
+
+        .layers {
+            position: relative;
+        }
+
+        .layers::before,
+        .layers::after {
+            content: attr(data-text);
+            position: absolute;
+            width: 110%;
+            z-index: -1;
+        }
+
+        .layers::before {
+            top: 10px;
+            left: 15px;
+            color: #e0287d;
+        }
+
+        .layers::after {
+            top: 5px;
+            left: -10px;
+            color: #1bc7fb;
+        }
+
+        .single-path {
+            clip-path: polygon(0% 12%,
+                    53% 12%,
+                    53% 26%,
+                    25% 26%,
+                    25% 86%,
+                    31% 86%,
+                    31% 0%,
+                    53% 0%,
+                    53% 84%,
+                    92% 84%,
+                    92% 82%,
+                    70% 82%,
+                    70% 29%,
+                    78% 29%,
+                    78% 65%,
+                    69% 65%,
+                    69% 66%,
+                    77% 66%,
+                    77% 45%,
+                    85% 45%,
+                    85% 26%,
+                    97% 26%,
+                    97% 28%,
+                    84% 28%,
+                    84% 34%,
+                    54% 34%,
+                    54% 89%,
+                    30% 89%,
+                    30% 58%,
+                    83% 58%,
+                    83% 5%,
+                    68% 5%,
+                    68% 36%,
+                    62% 36%,
+                    62% 1%,
+                    12% 1%,
+                    12% 34%,
+                    60% 34%,
+                    60% 57%,
+                    98% 57%,
+                    98% 83%,
+                    1% 83%,
+                    1% 53%,
+                    91% 53%,
+                    91% 84%,
+                    8% 84%,
+                    8% 83%,
+                    4% 83%);
+        }
+
+        .paths {
+            animation: paths 5s step-end infinite;
+        }
+
+        @keyframes paths {
+            0% {
+                clip-path: polygon(0% 43%,
+                        83% 43%,
+                        83% 22%,
+                        23% 22%,
+                        23% 24%,
+                        91% 24%,
+                        91% 26%,
+                        18% 26%,
+                        18% 83%,
+                        29% 83%,
+                        29% 17%,
+                        41% 17%,
+                        41% 39%,
+                        18% 39%,
+                        18% 82%,
+                        54% 82%,
+                        54% 88%,
+                        19% 88%,
+                        19% 4%,
+                        39% 4%,
+                        39% 14%,
+                        76% 14%,
+                        76% 52%,
+                        23% 52%,
+                        23% 35%,
+                        19% 35%,
+                        19% 8%,
+                        36% 8%,
+                        36% 31%,
+                        73% 31%,
+                        73% 16%,
+                        1% 16%,
+                        1% 56%,
+                        50% 56%,
+                        50% 8%);
+            }
+
+            5% {
+                clip-path: polygon(0% 29%,
+                        44% 29%,
+                        44% 83%,
+                        94% 83%,
+                        94% 56%,
+                        11% 56%,
+                        11% 64%,
+                        94% 64%,
+                        94% 70%,
+                        88% 70%,
+                        88% 32%,
+                        18% 32%,
+                        18% 96%,
+                        10% 96%,
+                        10% 62%,
+                        9% 62%,
+                        9% 84%,
+                        68% 84%,
+                        68% 50%,
+                        52% 50%,
+                        52% 55%,
+                        35% 55%,
+                        35% 87%,
+                        25% 87%,
+                        25% 39%,
+                        15% 39%,
+                        15% 88%,
+                        52% 88%);
+            }
+
+            30% {
+                clip-path: polygon(0% 53%,
+                        93% 53%,
+                        93% 62%,
+                        68% 62%,
+                        68% 37%,
+                        97% 37%,
+                        97% 89%,
+                        13% 89%,
+                        13% 45%,
+                        51% 45%,
+                        51% 88%,
+                        17% 88%,
+                        17% 54%,
+                        81% 54%,
+                        81% 75%,
+                        79% 75%,
+                        79% 76%,
+                        38% 76%,
+                        38% 28%,
+                        61% 28%,
+                        61% 12%,
+                        55% 12%,
+                        55% 62%,
+                        68% 62%,
+                        68% 51%,
+                        0% 51%,
+                        0% 92%,
+                        63% 92%,
+                        63% 4%,
+                        65% 4%);
+            }
+
+            45% {
+                clip-path: polygon(0% 33%,
+                        2% 33%,
+                        2% 69%,
+                        58% 69%,
+                        58% 94%,
+                        55% 94%,
+                        55% 25%,
+                        33% 25%,
+                        33% 85%,
+                        16% 85%,
+                        16% 19%,
+                        5% 19%,
+                        5% 20%,
+                        79% 20%,
+                        79% 96%,
+                        93% 96%,
+                        93% 50%,
+                        5% 50%,
+                        5% 74%,
+                        55% 74%,
+                        55% 57%,
+                        96% 57%,
+                        96% 59%,
+                        87% 59%,
+                        87% 65%,
+                        82% 65%,
+                        82% 39%,
+                        63% 39%,
+                        63% 92%,
+                        4% 92%,
+                        4% 36%,
+                        24% 36%,
+                        24% 70%,
+                        1% 70%,
+                        1% 43%,
+                        15% 43%,
+                        15% 28%,
+                        23% 28%,
+                        23% 71%,
+                        90% 71%,
+                        90% 86%,
+                        97% 86%,
+                        97% 1%,
+                        60% 1%,
+                        60% 67%,
+                        71% 67%,
+                        71% 91%,
+                        17% 91%,
+                        17% 14%,
+                        39% 14%,
+                        39% 30%,
+                        58% 30%,
+                        58% 11%,
+                        52% 11%,
+                        52% 83%,
+                        68% 83%);
+            }
+
+            76% {
+                clip-path: polygon(0% 26%,
+                        15% 26%,
+                        15% 73%,
+                        72% 73%,
+                        72% 70%,
+                        77% 70%,
+                        77% 75%,
+                        8% 75%,
+                        8% 42%,
+                        4% 42%,
+                        4% 61%,
+                        17% 61%,
+                        17% 12%,
+                        26% 12%,
+                        26% 63%,
+                        73% 63%,
+                        73% 43%,
+                        90% 43%,
+                        90% 67%,
+                        50% 67%,
+                        50% 41%,
+                        42% 41%,
+                        42% 46%,
+                        50% 46%,
+                        50% 84%,
+                        96% 84%,
+                        96% 78%,
+                        49% 78%,
+                        49% 25%,
+                        63% 25%,
+                        63% 14%);
+            }
+
+            90% {
+                clip-path: polygon(0% 41%,
+                        13% 41%,
+                        13% 6%,
+                        87% 6%,
+                        87% 93%,
+                        10% 93%,
+                        10% 13%,
+                        89% 13%,
+                        89% 6%,
+                        3% 6%,
+                        3% 8%,
+                        16% 8%,
+                        16% 79%,
+                        0% 79%,
+                        0% 99%,
+                        92% 99%,
+                        92% 90%,
+                        5% 90%,
+                        5% 60%,
+                        0% 60%,
+                        0% 48%,
+                        89% 48%,
+                        89% 13%,
+                        80% 13%,
+                        80% 43%,
+                        95% 43%,
+                        95% 19%,
+                        80% 19%,
+                        80% 85%,
+                        38% 85%,
+                        38% 62%);
+            }
+
+            1%,
+            7%,
+            33%,
+            47%,
+            78%,
+            93% {
+                clip-path: none;
+            }
+        }
+
+        .movement {
+            /* Normally this position would be absolute & on the layers, set to relative here so we can see it on the div */
+            position: relative;
+            animation: movement 8s step-end infinite;
+        }
+
+        @keyframes movement {
+            0% {
+                top: 0px;
+                left: -20px;
+            }
+
+            15% {
+                top: 10px;
+                left: 10px;
+            }
+
+            60% {
+                top: 5px;
+                left: -10px;
+            }
+
+            75% {
+                top: -5px;
+                left: 20px;
+            }
+
+            100% {
+                top: 10px;
+                left: 5px;
+            }
+        }
+
+        .opacity {
+            animation: opacity 5s step-end infinite;
+        }
+
+        @keyframes opacity {
+            0% {
+                opacity: 0.1;
+            }
+
+            5% {
+                opacity: 0.7;
+            }
+
+            30% {
+                opacity: 0.4;
+            }
+
+            45% {
+                opacity: 0.6;
+            }
+
+            76% {
+                opacity: 0.4;
+            }
+
+            90% {
+                opacity: 0.8;
+            }
+
+            1%,
+            7%,
+            33%,
+            47%,
+            78%,
+            93% {
+                opacity: 0;
+            }
+        }
+
+        .font {
+            animation: font 7s step-end infinite;
+        }
+
+        @keyframes font {
+            0% {
+                font-weight: 100;
+                color: #e0287d;
+                filter: blur(3px);
+            }
+
+            20% {
+                font-weight: 500;
+                color: #fff;
+                filter: blur(0);
+            }
+
+            50% {
+                font-weight: 300;
+                color: #1bc7fb;
+                filter: blur(2px);
+            }
+
+            60% {
+                font-weight: 700;
+                color: #fff;
+                filter: blur(0);
+            }
+
+            90% {
+                font-weight: 500;
+                color: #e0287d;
+                filter: blur(6px);
+            }
+        }
+
+        .glitch span {
+            animation: paths 5s step-end infinite;
+        }
+
+        .glitch::before {
+            animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+                font 8s step-end infinite, movement 10s step-end infinite;
+        }
+
+        .glitch::after {
+            animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+                font 7s step-end infinite, movement 8s step-end infinite;
+        }
+
+        .hero-container {
+            position: relative;
+            padding: 200px 0;
+            text-align: center;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*  */
+
+        .stack {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .stack span {
+            font-weight: bold;
+            grid-row-start: 1;
+            grid-column-start: 1;
+            font-size: 4rem;
+            --stack-height: calc(100% / var(--stacks) - 1px);
+            --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+            --clip-top: calc(var(--stack-height) * var(--index));
+            --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+            clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+            animation: stack 100ms cubic-bezier(.46, .29, 0, 1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
+        }
+
+        .stack span:nth-child(odd) {
+            --glitch-translate: 8px;
+        }
+
+        .stack span:nth-child(even) {
+            --glitch-translate: -8px;
+        }
+
+        @keyframes stack {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%);
+                text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+            }
+
+            ;
+
+            60% {
+                opacity: 0.5;
+                transform: translateX(50%);
+            }
+
+            80% {
+                transform: none;
+                opacity: 1;
+                text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+            }
+
+            100% {
+                text-shadow: none;
+            }
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+                transform: translate(var(--glitch-translate));
+            }
+
+            2% {
+                text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+            }
+
+            4%,
+            100% {
+                text-shadow: none;
+                transform: none;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+    /* <div id="preloader"></div> */
+    <div class="wrapper">
+        <div class="nav">
+            <div class="logo">
+                <a href="index.html">
+                    <h4>M<span style="color: #e0501b;"> T</span> M</h4>
+                </a>
+            </div>
+            <div class="links">
+                <a href="schedule.html">Schedule</a>
+                <a href="events.html">Events</a>
+                <a href="">Sponsors</a>
+                <a href="">Team</a>
+                <a href="">Contact us</a>
+            </div>
+        </div>
+
+        <!-- LANDING PAGE -->
+
+        <div class="landing">
+
+            <div class="landingText" data-aos="fade-up" data-aos-duration="1000">
+                <h1 style="font-size:10vh; color:rgb(255, 255, 255); font-weight:bold" class="hero glitch layers"
+                    data-text="Mech Tech Meet">
+                    Mech Tech Meet
+
+                </h1>
+                <div class="stack" style="--stacks: 3; color: white;">
+                    <span style="--index: 0;">Mech Tech Meet</span>
+                    <span style="--index: 1;">Mech Tech Meet</span>
+                    <span style="--index: 2;">Mech Tech Meet</span>
+                </div>
+                <h3>
+                    “Where technology meets innovation.”
+                </h3>
+
+            </div>
+            <div class='landingImageContainer'>
+                <div class="landingImage" data-aos="fade-down" data-aos-duration="2000">
+                    /* <img src="../robot-waving.gif" alt="" /> */
+
+                </div>
+            </div>
+        </div>
+
+        <div class="timer">
+
+            <div class="container">
+                <h1 id="headline">Countdown starts...</h1>
+                <div id="countdown">
+                    <ul>
+                        <li><span id="days"></span>days</li>
+                        <li><span id="hours"></span>Hours</li>
+                        <li><span id="minutes"></span>Minutes</li>
+                        <li><span id="seconds"></span>Seconds</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <!-- ABOUT SECTION -->
+
+        <div class="about">
+            <div class="aboutText" data-aos="fade-up" data-aos-duration="1000">
+                <h1 id="abtext">
+                    Intro with
+                    <span style="color: #2f8be0">MTM (Mech Tech Meet)</span>
+                </h1>
+                <img src="https://i.pinimg.com/originals/f6/d7/ef/f6d7ef4b5b015be7cf607e2087c0a244.png" alt="" />
+            </div>
+            <div class="aboutList" data-aos="fade-left" data-aos-duration="1000">
+                <ol>
+                    <li>
+                        <span>01</span>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque illo voluptatem sapi
+                        </p>
+                    </li>
+                    <li>
+                        <span>02</span>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas earum nihil quasi deleniti
+                            commodi! </p>
+                    </li>
+                    <li>
+                        <span>03</span>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione culpa sapiente similique
+                            nihil </p>
+                    </li>
+                    <li>
+                        <span>04</span>
+                        <p>Stay Calm, Stay Safe and Stay Healthy!</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+
+
+
+        <section class="s2">
+            <div class="container-sm edSection">
+                <div class="conatiner text-center mb-5">
+                    <h1 class="head" data-aos="fade-up" data-aos-delay="300">
+                        Golden Words
+                    </h1>
+                </div>
+                <!-- CARDS -->
+
+                <div class="card mb-5" data-aos="fade-right" data-aos-delay="500" style="border-radius: 50px;">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-6 col-sm-12 p-5" style="height: 200px">
+                            <img src="../raghvendra.png" alt="education.png" style="border-radius:50px ;
+                        height: 210%;
+                        width: 75%;
+                        margin-left: 35px;
+                        margin-top: -50px;" />
+                        </div>
+                        <div class="col-xl-6 col-md-6 col-sm-12 p-5">
+                            <h4>Principal's Words</h4>
+                            <div class="qual">
+                                <h6><em>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo reiciendis quos
+                                        unde vitae pariatur, necessitatibus praesentium quis asperiores voluptatem
+                                        impedit, aperiam aliquam fugit in labore dolores officiis ullam incidunt
+                                        eaque.</em></h6>
+                                <!-- <h6><em>B.Tech Electronics and Communication</em></h6>
+                                <h6><em>2020-present</em></h6> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-5" data-aos="fade-right" data-aos-delay="500" style="border-radius: 50px;">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-6 col-sm-12 p-5" style="height: 200px">
+                            <img src="../raghvendra.png" alt="education.png" style="border-radius:50px ;
+                        height: 210%;
+                        width: 75%;
+                        margin-left: 35px;
+                        margin-top: -50px;" />
+                        </div>
+                        <div class="col-xl-6 col-md-6 col-sm-12 p-5">
+                            <h4>Vice Principal's Words</h4>
+                            <div class="qual">
+                                <h6><em>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo reiciendis quos
+                                        unde vitae pariatur, necessitatibus praesentium quis asperiores voluptatem
+                                        impedit, aperiam aliquam fugit in labore dolores officiis ullam incidunt
+                                        eaque.</em></h6>
+                                <!-- <h6><em>B.Tech Electronics and Communication</em></h6>
+                                <h6><em>2020-present</em></h6> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="s2">
+            <div class="container-sm edSection">
+                <div class="conatiner text-center mb-5">
+                    <h1 class="head" data-aos="fade-up" data-aos-delay="300">
+                        Gallery
+                    </h1>
+                    <section id="gallery" data-aos="fade-up" data-aos-delay="300">
+                        <div class="container">
+                            <div id="image-gallery">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                                        <div class="img-wrapper">
+                                            <a href="https://unsplash.it/500"><img src="https://unsplash.it/500"
+                                                    class="img-responsive"></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                                        <div class="img-wrapper">
+                                            <a href="https://unsplash.it/600"><img src="https://unsplash.it/600"
+                                                    class="img-responsive"></a>
+                                            <div class="img-overlay">
+                                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                                        <div class="img-wrapper">
+                                            <a href="https://unsplash.it/700"><img src="https://unsplash.it/700"
+                                                    class="img-responsive"></a>
+                                            <div class="img-overlay">
+                                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                                        <div class="img-wrapper">
+                                            <a href="https://unsplash.it/800"><img src="https://unsplash.it/800"
+                                                    class="img-responsive"></a>
+                                            <div class="img-overlay">
+                                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                                        <div class="img-wrapper">
+                                            <a href="https://unsplash.it/900"><img src="https://unsplash.it/900"
+                                                    class="img-responsive"></a>
+                                            <div class="img-overlay">
+                                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                                        <div class="img-wrapper">
+                                            <a href="https://unsplash.it/1000"><img src="https://unsplash.it/1000"
+                                                    class="img-responsive"></a>
+                                            <div class="img-overlay">
+                                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                                        <div class="img-wrapper">
+                                            <a href="https://unsplash.it/1100"><img src="https://unsplash.it/1100"
+                                                    class="img-responsive"></a>
+                                            <div class="img-overlay">
+                                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                                        <div class="img-wrapper">
+                                            <a href="https://unsplash.it/1200"><img src="https://unsplash.it/1200"
+                                                    class="img-responsive"></a>
+                                            <div class="img-overlay">
+                                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- End row -->
+                            </div><!-- End image gallery -->
+                        </div><!-- End container -->
+                    </section>
+                </div>
+
+
+                <!-- Footer -->
+
+                <div class=" footer">
+                    <h2>M<span style="color: #e0501b;"> T</span> M</h2>
+                    <div class="footerlinks">
+                        <a href="schedule.html">Schedule</a>
+                        <a href="events.html">Events</a>
+                        <a href="">Sponsors</a>
+                        <a href="">Team</a>
+                        <a href="">Contact us</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <script>
+
+            var loader = document.getElementById("preloader");
+            window.addEventListener("load", function () {
+                loader.style.display = "none"
+            })
+
+        </script>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="index.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <script src="countdown.js"></script>
+</body>
+
+</html>
