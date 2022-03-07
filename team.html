@@ -13,10 +13,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
-    <link id="favicon" rel="shortcut icon" href="gfg.png" type="image/x-png" />
+    <link id="favicon" rel="shortcut icon" href="../mechtechmeet_89345161_210407610159541_487153517.pngs" type="image/x-png" />
+    <link rel="stylesheet" href="css/home.css">
 
-    <!-- <script src="app.js"></script> -->
-    <title>Our Team</title>
+
+    <title>MTM-Team</title>
 
     <style>
         @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700);
@@ -24,7 +25,7 @@
             text-decoration: none;
             margin: 0px;
             padding: 0;
-            font-family: ubuntu;
+            font-family: 'Source Sans Pro', sans-serif;
             /* background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); */
         }
         /* Section 1 CSS */
@@ -32,12 +33,11 @@
         h1 {
             z-index: 3;
         }
-       
         /* Our team */
         
         .ourteam {
             text-align: center;
-            margin-bottom: -60px;
+            margin-bottom: 40px;
             color: #2A8E47;
             display: flex;
             align-items: center;
@@ -64,12 +64,10 @@
         }
         
         .card {
-            /* background-image: url("https://thumbs.gfycat.com/BountifulBronzeErin-size_restricted.gif"); */
-            /* background-image: url(../BountifulBronzeErin-size_restricted.gif); */
-            background-image: url(../ezgif.com-gif-maker.gif) ;
+            background-image: url(img/ezgif.com-gif-maker.gif);
             background-repeat: no-repeat;
             background-size: 100%;
-            background-color: black; !important;
+            background-color: black !important;
             align-items: center;
             margin-top: 100px;
             position: relative;
@@ -107,354 +105,318 @@
         }
         
         @media only screen and (max-width: 600px) {
-           
             .ourteam h1 {
                 font-size: 35px !important;
             }
         }
-
+        
         @font-face {
-    font-family: "Agustina";
-    src: url(../fonts/Agustina.woff);
-}
-
-
-/*CSS variable declaration for light/dark mode*/
-
-html[data-theme="light"] {
-    --bg-mybtn: red;
-    --bg-nav: black;
-    --bg-nav-img: black;
-    --bg-footer: #DDE1EC;
-    --bg: #ffffff;
-    --text: #191919;
-    --text-color: #6c757d;
-    --col-icon: black;
-    --col-bd-radius: rgb(2, 2, 2);
-    --col-box-shadow: #000000 2px 2px 4px, #4D4D4D -2px -2px 4px;
-    --col-box-shadow-hover: inset #8a7373 2px 2px 4px, inset #4D4D4D -2px -2px 4px;
-    --col-bd-icon: transparent;
-    --bg-icon: #fff;
-    --col-icon-linkedin: #0e76a8;
-    --col-icon-github: #24292e;
-    --col-icon-instagram: rgb(201, 94, 174);
-    --col-icon-mail: rgb(209, 82, 82);
-    --shadow-col: rgba(0, 0, 0, 0.3);
-}
-
-
-
-/*
+            font-family: "Agustina";
+            src: url(../fonts/Agustina.woff);
+        }
+        /*CSS variable declaration for light/dark mode*/
+        
+        html[data-theme="light"] {
+            --bg-mybtn: red;
+            --bg-nav: black;
+            --bg-nav-img: black;
+            --bg-footer: #DDE1EC;
+            --bg: #ffffff;
+            --text: #191919;
+            --text-color: #6c757d;
+            --col-icon: black;
+            --col-bd-radius: rgb(2, 2, 2);
+            --col-box-shadow: #000000 2px 2px 4px, #4D4D4D -2px -2px 4px;
+            --col-box-shadow-hover: inset #8a7373 2px 2px 4px, inset #4D4D4D -2px -2px 4px;
+            --col-bd-icon: transparent;
+            --bg-icon: #fff;
+            --col-icon-linkedin: #0e76a8;
+            --col-icon-github: #24292e;
+            --col-icon-instagram: rgb(201, 94, 174);
+            --col-icon-mail: rgb(209, 82, 82);
+            --shadow-col: rgba(0, 0, 0, 0.3);
+        }
+        /*
 ------------------------------
    TWITTER MICROANIMATION
 -------------------------------
 */
-
-.twitter:hover #wing1 {
-    transform-origin: center;
-    animation: flap 0.4s ease-out infinite alternate;
-}
-
-.twitter:hover #wing2 {
-    transform-origin: center;
-    animation: flap 0.4s ease-in infinite alternate;
-}
-
-@keyframes flap {
-    50% {
-        transform: scaleX(-1) rotate(-45deg) translate(-40px, -40px);
-    }
-}
-
-
-/*
+        
+        .twitter:hover #wing1 {
+            transform-origin: center;
+            animation: flap 0.4s ease-out infinite alternate;
+        }
+        
+        .twitter:hover #wing2 {
+            transform-origin: center;
+            animation: flap 0.4s ease-in infinite alternate;
+        }
+        
+        @keyframes flap {
+            50% {
+                transform: scaleX(-1) rotate(-45deg) translate(-40px, -40px);
+            }
+        }
+        /*
 -----------------------------
    LINKEDIN MICROANIMATION
 -----------------------------
 */
-
-.linkedin:hover .linkedin-icon-footer>rect {
-    animation: rect-up 0.3s linear infinite;
-}
-
-@keyframes rect-up {
-    50% {
-        y: 10px;
-        height: 11px;
-    }
-    0% {
-        y: 13px;
-        height: 8px;
-    }
-}
-
-.linkedin:hover .linkedin-icon-footer>circle {
-    animation: bounce 0.4s linear infinite;
-}
-
-@keyframes bounce {
-    75% {
-        cy: 8px;
-    }
-    50% {
-        cy: 4px
-    }
-    0% {
-        cy: 4px
-    }
-}
-
-
-/*
+        
+        .linkedin:hover .linkedin-icon-footer>rect {
+            animation: rect-up 0.3s linear infinite;
+        }
+        
+        @keyframes rect-up {
+            50% {
+                y: 10px;
+                height: 11px;
+            }
+            0% {
+                y: 13px;
+                height: 8px;
+            }
+        }
+        
+        .linkedin:hover .linkedin-icon-footer>circle {
+            animation: bounce 0.4s linear infinite;
+        }
+        
+        @keyframes bounce {
+            75% {
+                cy: 8px;
+            }
+            50% {
+                cy: 4px
+            }
+            0% {
+                cy: 4px
+            }
+        }
+        /*
 -----------------------------
    INSTAGRAM MICROANIMATION
 -----------------------------
 */
-
-.st0 {
-    fill: none;
-    stroke: #EF4649;
-    stroke-width: 7;
-    stroke-linecap: round;
-    stroke-miterlimit: 10;
-}
-
-.instagram-icon-footer:hover #littleCircle {
-    stroke-dasharray: 150;
-}
-
-.instagram #shutter {
-    display: none;
-}
-
-.instagram-icon-footer:hover #shutter {
-    display: block;
-    animation: shutter 1s linear infinite;
-}
-
-.instagram-icon-footer:hover #lens {
-    fill: #EF4649;
-    animation: lens 1.5s linear infinite;
-}
-
-@keyframes shutter {
-    0%,
-    50% {
-        stroke-dashoffset: 150;
-    }
-    75% {
-        fill: #EF4649;
-        stroke-dashoffset: 0;
-        stroke-width: 11;
-    }
-}
-
-@keyframes lens {
-    0%,
-    75% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-
-/*
+        
+        .st0 {
+            fill: none;
+            stroke: #EF4649;
+            stroke-width: 7;
+            stroke-linecap: round;
+            stroke-miterlimit: 10;
+        }
+        
+        .instagram-icon-footer:hover #littleCircle {
+            stroke-dasharray: 150;
+        }
+        
+        .instagram #shutter {
+            display: none;
+        }
+        
+        .instagram-icon-footer:hover #shutter {
+            display: block;
+            animation: shutter 1s linear infinite;
+        }
+        
+        .instagram-icon-footer:hover #lens {
+            fill: #EF4649;
+            animation: lens 1.5s linear infinite;
+        }
+        
+        @keyframes shutter {
+            0%,
+            50% {
+                stroke-dashoffset: 150;
+            }
+            75% {
+                fill: #EF4649;
+                stroke-dashoffset: 0;
+                stroke-width: 11;
+            }
+        }
+        
+        @keyframes lens {
+            0%,
+            75% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        /*
 -----------------------------
    GITHUB MICROANIMATION
 -----------------------------
 */
-
-.github:hover #arm {
-    transform-origin: bottom right;
-    animation: moveArm 1s infinite alternate;
-}
-
-@keyframes moveArm {
-    0% {
-        transform: rotate(10deg);
-    }
-    100% {
-        transform: rotate(-10deg);
-    }
-}
-
-
-/* twitter SVG micro animation */
-
-.twitter-icon-footer {
-    margin-bottom: 6px;
-    width: 35px;
-}
-
-
-/* linkedin SVG micro animation */
-
-.linkedin-icon-footer {
-    margin-bottom: 8px;
-    width: 30px;
-}
-
-
-/* instagram SVG micro animation */
-
-.instagram-icon-footer {
-    width: 70px;
-    padding-right: 24px;
-    padding-bottom: 8px;
-}
-
-
-/* github SVG Micro animation */
-
-.github-icon-footer {
-    margin-bottom: 8px;
-    width: 35px;
-}
-
-
-/*
+        
+        .github:hover #arm {
+            transform-origin: bottom right;
+            animation: moveArm 1s infinite alternate;
+        }
+        
+        @keyframes moveArm {
+            0% {
+                transform: rotate(10deg);
+            }
+            100% {
+                transform: rotate(-10deg);
+            }
+        }
+        /* twitter SVG micro animation */
+        
+        .twitter-icon-footer {
+            margin-bottom: 6px;
+            width: 35px;
+        }
+        /* linkedin SVG micro animation */
+        
+        .linkedin-icon-footer {
+            margin-bottom: 8px;
+            width: 30px;
+        }
+        /* instagram SVG micro animation */
+        
+        .instagram-icon-footer {
+            width: 70px;
+            padding-right: 24px;
+            padding-bottom: 8px;
+        }
+        /* github SVG Micro animation */
+        
+        .github-icon-footer {
+            margin-bottom: 8px;
+            width: 35px;
+        }
+        /*
 ----------------------------------------
    HOVER EFFECT ON SOCIAL MEDIA ICONS
 ----------------------------------------
 */
-
-.rounded-social-buttons .social-button.twitter {
-    background: white;
-}
-
-.rounded-social-buttons .social-button.twitter:hover,
-.rounded-social-buttons .social-button.twitter:focus {
-    color: #000;
-    background: white;
-}
-
-.rounded-social-buttons .social-button.linkedin {
-    background: white;
-}
-
-.rounded-social-buttons .social-button.linkedin:hover,
-.rounded-social-buttons .social-button.linkedin:focus {
-    color: #000;
-    background: white;
-}
-
-.rounded-social-buttons .social-button.instagram {
-    background: white;
-}
-
-.rounded-social-buttons .social-button.instagram:hover,
-.rounded-social-buttons .social-button.instagram:focus {
-    color: #000;
-    background: white;
-}
-
-.rounded-social-buttons .social-button.github {
-    background: white;
-}
-
-.rounded-social-buttons .social-button.github:hover,
-.rounded-social-buttons .social-button.github:focus {
-    color: #000000;
-    background: white;
-}
-
-.rounded-social-buttons .social-button.instagram {
-    background: white;
-}
-
-.rounded-social-buttons .social-button {
-    display: inline-block;
-    cursor: pointer;
-    width: 3.125rem;
-    height: 3.125rem;
-    border: 0.125rem solid transparent;
-    padding: 0;
-    text-decoration: none;
-    text-align: center;
-    color: #fefefe;
-    font-size: 1.5625rem;
-    font-weight: normal;
-    line-height: 2em;
-    border-radius: 1.6875rem;
-    transition: all 0.5s ease;
-    margin-right: 0.25rem;
-    margin-bottom: 0.25rem;
-}
+        
+        .rounded-social-buttons .social-button.twitter {
+            background: white;
+        }
+        
+        .rounded-social-buttons .social-button.twitter:hover,
+        .rounded-social-buttons .social-button.twitter:focus {
+            color: #000;
+            background: white;
+        }
+        
+        .rounded-social-buttons .social-button.linkedin {
+            background: white;
+        }
+        
+        .rounded-social-buttons .social-button.linkedin:hover,
+        .rounded-social-buttons .social-button.linkedin:focus {
+            color: #000;
+            background: white;
+        }
+        
+        .rounded-social-buttons .social-button.instagram {
+            background: white;
+        }
+        
+        .rounded-social-buttons .social-button.instagram:hover,
+        .rounded-social-buttons .social-button.instagram:focus {
+            color: #000;
+            background: white;
+        }
+        
+        .rounded-social-buttons .social-button.github {
+            background: white;
+        }
+        
+        .rounded-social-buttons .social-button.github:hover,
+        .rounded-social-buttons .social-button.github:focus {
+            color: #000000;
+            background: white;
+        }
+        
+        .rounded-social-buttons .social-button.instagram {
+            background: white;
+        }
+        
+        .rounded-social-buttons .social-button {
+            display: inline-block;
+            cursor: pointer;
+            width: 3.125rem;
+            height: 3.125rem;
+            border: 0.125rem solid transparent;
+            padding: 0;
+            text-decoration: none;
+            text-align: center;
+            color: #fefefe;
+            font-size: 1.5625rem;
+            font-weight: normal;
+            line-height: 2em;
+            border-radius: 1.6875rem;
+            transition: all 0.5s ease;
+            margin-right: 0.25rem;
+            margin-bottom: 0.25rem;
+        }
     </style>
 </head>
 
 <body>
-   
+
 
     <!-- body  -->
 
-  
+    <div id="preloader"></div>
+    <div class="wrapper">
+        <div class="nav1">
+            <div class="logo">
+                <a href="index.html">
+                    <h4>M<span style="color: #e0501b;"> T</span> M</h4>
+                </a>
+            </div>
+            <div class="links">
+                <a href="schedule.html">Schedule</a>
+                <a href="events.html">Events</a>
+                <a href="sponsors.html">Sponsors</a>
+                <a href="team.html">Team</a>
+                <a href="">Contact us</a>
+            </div>
+        </div>
+    </div>
 
     <div class="ourteam">
-      <!-- <h1 style="font-family: sans-serif; font-size: 35px; font-weight: bold">
+        <!-- <h1 style="font-family: sans-serif; font-size: 35px; font-weight: bold">
         Lead Section
       </h1> -->
     </div>
 
     <div id="row">
-      <div class="card" id="about">
-        <div class="card-body">
-          <div class="flex-column align-items-center">
-            <img
-              src="../raghvendra.png"
-              height="150px"
-              width="150px"
-              class="rounded-circle"
-              width="150"
-            />
-            <div style="color:white;">
-              <h4>Raghvendra </h4>
-              <p>Chapter Lead</p>
-              <div class="contact-icon">
-                <i class="fa fa-map-o" aria-hidden="false"></i>
-              </div>
-            </div>
-            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptatibus nisi ut officia explicabo et animi officiis itaque esse? Nulla sequi iste vitae. Voluptate voluptatem soluta minus distinctio libero illo.</p> -->
-            <div class="rounded-social-buttons tag">
-              <a
-                class="social-button linkedin"
-                href="https://www.linkedin.com/in/ami-jangid-231187208/"
-                target="_blank"
-              >
-                <!-- svg code for linkedin icon -->
-                <svg
-                  class="linkedin-icon-footer"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="35"
-                  viewBox="0 0 24 24"
-                  fill="#0e76a8"
-                  stroke-width="1"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-linkedin"
-                >
+        <div class="card" id="about">
+            <div class="card-body">
+                <div class="flex-column align-items-center">
+                    <img src="img/raghvendra.png" height="150px" width="150px" class="rounded-circle" width="150" />
+                    <div style="color:white;">
+                        <h4>Raghvendra </h4>
+                        <p>Chapter Lead</p>
+                        <div class="contact-icon">
+                            <i class="fa fa-map-o" aria-hidden="false"></i>
+                        </div>
+                    </div>
+                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptatibus nisi ut officia explicabo et animi officiis itaque esse? Nulla sequi iste vitae. Voluptate voluptatem soluta minus distinctio libero illo.</p> -->
+                    <div class="rounded-social-buttons tag">
+                        <a class="social-button linkedin" href="https://www.linkedin.com/in/ami-jangid-231187208/" target="_blank">
+                            <!-- svg code for linkedin icon -->
+                            <svg class="linkedin-icon-footer" xmlns="http://www.w3.org/2000/svg" width="35" viewBox="0 0 24 24" fill="#0e76a8" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
                   <path
                     d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
                   ></path>
                   <rect x="2" y="9" width="4" height="12"></rect>
                   <circle cx="4" cy="4" r="2"></circle>
                 </svg>
-              </a>
-              <a
-                class="social-button instagram"
-                href="https://www.instagram.com/ami__1720//"
-                target="_blank"
-              >
-                <!-- svg code for instagram icon -->
-                <svg
-                  class="instagram-icon-footer"
-                  x="0px"
-                  y="0px"
-                  viewBox="0 0 202.5 202.5"
-                  style="enable-background: new 0 0 202.5 202.5"
-                >
+                        </a>
+                        <a class="social-button instagram" href="https://www.instagram.com/ami__1720//" target="_blank">
+                            <!-- svg code for instagram icon -->
+                            <svg class="instagram-icon-footer" x="0px" y="0px" viewBox="0 0 202.5 202.5" style="enable-background: new 0 0 202.5 202.5">
                   <circle
                     id="littleCircle"
                     class="st0"
@@ -470,67 +432,37 @@ html[data-theme="light"] {
                     d="M79,60.5h44c10.5,0,19,8.5,19,19v44c0,10.5-8.5,19-19,19H79c-10.5,0-19-8.5-19-19v-44                                                                            C60,69,68.5,60.5,79,60.5z"
                   />
                 </svg>
-              </a>
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="card" id="about">
-        <div class="card-body">
-          <div class="flex-column align-items-center">
-            <img
-              src="../raghvendra.png"
-              height="150px"
-              width="150px"
-              class="rounded-circle"
-              width="150"
-            />
-            <div style="color:white;">
-              <h4>Raghvendra Singh Parihar</h4>
-              <p>Vice-Chairperson</p>
-              <div class="contact-icon">
-                <i class="fa fa-map-o" aria-hidden="false"></i>
-              </div>
-            </div>
-            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptatibus nisi ut officia explicabo et animi off iste vitae. Voluptate voluptatem soluta minus distinctio libero illo.</p> -->
-            <div class="rounded-social-buttons tag">
-              <a
-                class="social-button linkedin"
-                href="https://www.linkedin.com/in/raghvendra-singh-parihar-4378621b3/"
-                target="_blank"
-              >
-                <!-- svg code for linkedin icon -->
-                <svg
-                  class="linkedin-icon-footer"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="35"
-                  viewBox="0 0 24 24"
-                  fill="#0e76a8"
-                  stroke-width="1"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-linkedin"
-                >
+        <div class="card" id="about">
+            <div class="card-body">
+                <div class="flex-column align-items-center">
+                    <img src="img/raghvendra.png" height="150px" width="150px" class="rounded-circle" width="150" />
+                    <div style="color:white;">
+                        <h4>Raghvendra Singh Parihar</h4>
+                        <p>Vice-Chairperson</p>
+                        <div class="contact-icon">
+                            <i class="fa fa-map-o" aria-hidden="false"></i>
+                        </div>
+                    </div>
+                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptatibus nisi ut officia explicabo et animi off iste vitae. Voluptate voluptatem soluta minus distinctio libero illo.</p> -->
+                    <div class="rounded-social-buttons tag">
+                        <a class="social-button linkedin" href="https://www.linkedin.com/in/raghvendra-singh-parihar-4378621b3/" target="_blank">
+                            <!-- svg code for linkedin icon -->
+                            <svg class="linkedin-icon-footer" xmlns="http://www.w3.org/2000/svg" width="35" viewBox="0 0 24 24" fill="#0e76a8" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
                   <path
                     d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
                   ></path>
                   <rect x="2" y="9" width="4" height="12"></rect>
                   <circle cx="4" cy="4" r="2"></circle>
                 </svg>
-              </a>
-              <a
-                class="social-button instagram"
-                href="https://www.instagram.com/raghvendra.singhparihar/"
-                target="_blank"
-              >
-                <!-- svg code for instagram icon -->
-                <svg
-                  class="instagram-icon-footer"
-                  x="0px"
-                  y="0px"
-                  viewBox="0 0 202.5 202.5"
-                  style="enable-background: new 0 0 202.5 202.5"
-                >
+                        </a>
+                        <a class="social-button instagram" href="https://www.instagram.com/raghvendra.singhparihar/" target="_blank">
+                            <!-- svg code for instagram icon -->
+                            <svg class="instagram-icon-footer" x="0px" y="0px" viewBox="0 0 202.5 202.5" style="enable-background: new 0 0 202.5 202.5">
                   <circle
                     id="littleCircle"
                     class="st0"
@@ -546,22 +478,61 @@ html[data-theme="light"] {
                     d="M79,60.5h44c10.5,0,19,8.5,19,19v44c0,10.5-8.5,19-19,19H79c-10.5,0-19-8.5-19-19v-44                                                                            C60,69,68.5,60.5,79,60.5z"
                   />
                 </svg>
-              </a>
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
 
-      </body>
-  <script
-    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
-    integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
-    crossorigin="anonymous"
-  ></script>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Programs</h3>
+                        <ul>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Schedule</a></li>
+                            <li><a href="#">Sponsors</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Mech Tech Meet</h3>
+
+                        <p>lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum nesciunt aliquid est nulla corporis eaque perspiciatis, cupiditate, similique quis quidem a tenetur nemo nostrum obcaecati consectetur,
+                            sit blanditiis sint suscipit.</p>
+                    </div>
+
+                </div>
+        </footer>
+        </div>
+
+
+
+</body>
+<script>
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", function() {
+        loader.style.display = "none"
+    })
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="index.js"></script>
+<script>
+    AOS.init();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
 </html>

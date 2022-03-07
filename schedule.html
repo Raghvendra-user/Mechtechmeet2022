@@ -5,21 +5,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Fitness Orbit</title>
+    <title>Schedule</title>
     <!-- <link rel="stylesheet" href="styles.css" /> -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <script src="js/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="css/home.css">
+
 
     <style>
         [data-aos^='fade'][data-aos^='fade'].aos-animate {
             transform: none;
         }
-
+        
         html,
         body {
             background-color: #a7a7a7;
@@ -28,11 +29,11 @@
             margin: 0px !important;
             padding: 0px !important;
         }
-
+        
         * {
             text-decoration: none !important;
         }
-
+        
         .nav {
             position: fixed;
             z-index: 10;
@@ -50,139 +51,126 @@
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
         }
-
+        
         .nav .links a {
             margin-right: 25px;
             font-size: 16px;
             font-weight: 600;
             color: #000;
         }
-
+        
         .nav .links .mainlink {
             color: #e0501b;
         }
-
+        
         .nav h4 {
             font-size: 22px;
             font-weight: bold;
             margin-left: 25px;
         }
-
-       /* 
-        */
-/* 
- */
-
- .schedule-warp{
-    padding-right:20px;
-    padding-left:20px;
-    padding: 20px 30px;
-    border: solid 1px #ddd;
-    background-color: #f5f5f5;
-    -webkit-transition: all 0.7s cubic-bezier(0.11, 0.6, 0.24, 0.89);
-    transition: all 0.7s cubic-bezier(0.11, 0.6, 0.24, 0.89);
-}
-.schedule{
-    background-color:#fff;
-}
-.schedule-warp:hover {
-    box-shadow: 0 6px 20px rgba(0,0,0,.07);
-    border: solid 1px rgba(100,40,145,.97);
-}
-.schedule{
-    padding:100px 0px;
-    background-color: #ecedf0;
-     font-family: 'Titillium Web';
-}
-.schedule-tag{
-    color:#fff;
-    background-color: #2228b9;
-    padding:3px 8px;
-    margin-right: 15px;
-    width: 90px;
-    font-family: 'Titillium Web';
-    text-align: center;
-}
-.schedule-header span{
-    display: inline-block;
-    margin-right:25px;
-}
-.schedule-header{
-    margin-bottom:80px;
-}
-.schedule-card{
-    position: relative;
-    margin-bottom: 0.7em;
-}
-.schedule-card:hover .insidebox {
-    transform: scale(1.033);
-    /* box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1); */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.schedule-card:hover:after {
-    background: #8a56d1;
-    width: 25px;
-}
-.schedule-card:after {
-    height: 2px;
-    width: 22px;
-    background: #ddd;
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -22px;
-    transition: all 0.3s ease-in;
-}
-.insidebox { 
-    box-shadow: 0 0px 5px rgba(0,0,0,.07);
-    background: #ffffff;
-    width: 100%;
-    height: auto;
-    display: flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -webkit-flex;
-    display: -o-flex;
-    -webkit-align-items: center;
-    align-items: center;
-    padding: 10px 20px;
-    color: #6164B2;
-    transition: all 0.2s ease-in;
-/*    justify-content: center;*/
-}
-
-.day-one{
-    margin-bottom:50px;
-    font-weight: bold;
-    font-size: 20px;
-    color: #6164B2;    
-    }
-
-
-
-        /* FOOTER CSS */
-
-        .footer {
-            height: 100px;
+        
+        .schedule-warp {
+            padding-right: 20px;
+            padding-left: 20px;
+            padding: 20px 30px;
+            border: solid 1px #ddd;
+            background-color: #f5f5f5;
+            -webkit-transition: all 0.7s cubic-bezier(0.11, 0.6, 0.24, 0.89);
+            transition: all 0.7s cubic-bezier(0.11, 0.6, 0.24, 0.89);
+        }
+        
+        .schedule {
+            background-color: #fff;
+        }
+        
+        .schedule-warp:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, .07);
+            border: solid 1px rgba(100, 40, 145, .97);
+        }
+        
+        .schedule {
+            padding: 100px 0px;
+            background-color: #ecedf0;
+            font-family: 'Titillium Web';
+        }
+        
+        .schedule-tag {
+            color: #fff;
+            background-color: #2228b9;
+            padding: 3px 8px;
+            margin-right: 15px;
+            width: 90px;
+            font-family: 'Titillium Web';
+            text-align: center;
+        }
+        
+        .schedule-header span {
+            display: inline-block;
+            margin-right: 25px;
+        }
+        
+        .schedule-header {
+            margin-bottom: 80px;
+        }
+        
+        .schedule-card {
+            position: relative;
+            margin-bottom: 0.7em;
+        }
+        
+        .schedule-card:hover .insidebox {
+            transform: scale(1.033);
+            /* box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1); */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .schedule-card:hover:after {
+            background: #8a56d1;
+            width: 25px;
+        }
+        
+        .schedule-card:after {
+            height: 2px;
+            width: 22px;
+            background: #ddd;
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -22px;
+            transition: all 0.3s ease-in;
+        }
+        
+        .insidebox {
+            box-shadow: 0 0px 5px rgba(0, 0, 0, .07);
+            background: #ffffff;
+            width: 100%;
+            height: auto;
             display: flex;
-            flex-direction: column;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -webkit-flex;
+            display: -o-flex;
+            -webkit-align-items: center;
             align-items: center;
-            padding-bottom: 20px;
+            padding: 10px 20px;
+            color: #6164B2;
+            transition: all 0.2s ease-in;
+            /*    justify-content: center;*/
         }
-
-        .footerlinks a {
-            margin: 20px;
-            font-size: 16px;
-            font-weight: 600;
-            color: #000;
+        
+        .day-one {
+            margin-bottom: 50px;
+            font-weight: bold;
+            font-size: 20px;
+            color: #6164B2;
         }
-
-        .footerlinks .mainlink {
-            color: #e0501b;
+        /* FOOTER CSS */
+        
+        .footer-dark {
+            margin-top: 50px;
         }
-
         /* RESPONSIVE */
-
+        
         @media only screen and (max-width: 600px) {
             .nav {
                 flex-direction: column;
@@ -191,29 +179,23 @@
                 height: auto;
                 overflow-y: hidden;
             }
-
             .nav h4 {
                 font-size: 6vw;
                 margin-top: 10px;
                 margin-bottom: 14px;
             }
-
             .nav .links a {
                 margin-right: 25px;
                 font-size: 12px;
                 font-weight: 600;
             }
-
-           
-
-
-        #preloader {
-            background: #000 url(https://cdnb.artstation.com/p/assets/images/images/007/510/273/original/klio-papadimitrou-klio-papadimitrou-loading.gif?1526832766) no-repeat center center;
-            width: 100%;
-            height: 100vh;
-            position: fixed;
-            z-index: 100;
-
+            #preloader {
+                background: #000 url(https://cdnb.artstation.com/p/assets/images/images/007/510/273/original/klio-papadimitrou-klio-papadimitrou-loading.gif?1526832766) no-repeat center center;
+                width: 100%;
+                height: 100vh;
+                position: fixed;
+                z-index: 100;
+            }
         }
     </style>
 
@@ -231,130 +213,157 @@
             </div>
             <div class="links">
                 <a href="schedule.html">Schedule</a>
-                <a href="">Competitions</a>
-                <a href="">Sponsors</a>
-                <a href="">Team</a>
+                <a href="events.html">Events</a>
+                <a href="sponsors.html">Sponsors</a>
+                <a href="team.html">Team</a>
                 <a href="">Contact us</a>
             </div>
         </div>
+    </div>
+
+    <div class="container" style="padding-top:15vh">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="schedule-warp">
+                    <div class="day-one">DAY 1: April 11 (Friday)</div>
+                    <div class="schedule-card">
+                        <div class="insidebox">
+                            <span class="schedule-tag">8:00 AM</span>
+                            <span class="schedule-start">Aao</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-card">
+                        <div class="insidebox">
+                            <span class="schedule-tag">8:30 AM</span>
+                            <span class="schedule-start">Khao</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-card">
+                        <div class="insidebox">
+                            <span class="schedule-tag">9:00 AM</span>
+                            <span class="schedule-start">Khelo</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-card">
+                        <div class="insidebox">
+                            <span class="schedule-tag">1:00 PM</span>
+                            <span class="schedule-start"> Jao</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-card">
+                        <div class="insidebox">
+                            <span class="schedule-tag">6:00 PM</span>
+                            <span class="schedule-start">GHar jao</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-card">
+                        <div class="insidebox">
+                            <span class="schedule-tag">6:30 PM</span>
+                            <span class="schedule-start">Sojao</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="schedule-warp">
+                    <div class="day-one">DAY 2: April 12 (Friday)</div>
+                    <div class="schedule-card">
+                        <div class="insidebox">
+                            <span class="schedule-tag">8:00 AM</span>
+                            <span class="schedule-start">Aao</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-card">
+                        <div class="insidebox">
+                            <span class="schedule-tag">8:30 AM</span>
+                            <span class="schedule-start">Khao</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-card">
+                        <div class="insidebox">
+                            <span class="schedule-tag">9:00 AM</span>
+                            <span class="schedule-start">Khelo</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-card">
+                        <div class="insidebox">
+                            <span class="schedule-tag">1:00 PM</span>
+                            <span class="schedule-start"> Jao</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-card">
+                        <div class="insidebox">
+                            <span class="schedule-tag">6:00 PM</span>
+                            <span class="schedule-start">GHar jao</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-card">
+                        <div class="insidebox">
+                            <span class="schedule-tag">6:30 PM</span>
+                            <span class="schedule-start">Sojao</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Programs</h3>
+                        <ul>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Schedule</a></li>
+                            <li><a href="#">Sponsors</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Mech Tech Meet</h3>
+
+                        <p>lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum nesciunt aliquid est nulla corporis eaque perspiciatis, cupiditate, similique quis quidem a tenetur nemo nostrum obcaecati consectetur,
+                            sit blanditiis sint suscipit.</p>
+                    </div>
+
+                </div>
+        </footer>
         </div>
 
-<div class="container" style="padding-top:15vh">
-	<div class="row">
-	<div class="col-md-6">
-            <div class="schedule-warp">
-                <div class="day-one">DAY 1: April 11 (Friday)</div>
-             <div class="schedule-card">
-               <div class="insidebox">
-                   <span class="schedule-tag">8:00 AM</span> 
-                    <span class="schedule-start">Aao</span>                  
-               </div> 
-                </div>
-                
-                <div class="schedule-card">
-               <div class="insidebox">
-                   <span class="schedule-tag">8:30 AM</span> 
-                    <span class="schedule-start">Khao</span>                  
-               </div> 
-                </div>
-                
-                <div class="schedule-card">
-               <div class="insidebox">
-                   <span class="schedule-tag">9:00 AM</span> 
-                    <span class="schedule-start">Khelo</span>                  
-               </div> 
-                </div>
-                
-                <div class="schedule-card">
-               <div class="insidebox">
-                   <span class="schedule-tag">1:00 PM</span> 
-                    <span class="schedule-start"> Jao</span>                  
-               </div> 
-                </div>
-                
-                <div class="schedule-card">
-               <div class="insidebox">
-                   <span class="schedule-tag">6:00 PM</span> 
-                    <span class="schedule-start">GHar jao</span>                  
-               </div> 
-                </div>
-                
-                <div class="schedule-card">
-               <div class="insidebox">
-                   <span class="schedule-tag">6:30 PM</span> 
-                    <span class="schedule-start">Sojao</span>                  
-               </div> 
-                </div>
-            </div>
-            </div>        
-            <div class="col-md-6">
-            <div class="schedule-warp">
-                <div class="day-one">DAY 2: April 12 (Friday)</div>
-             <div class="schedule-card">
-               <div class="insidebox">
-                   <span class="schedule-tag">8:00 AM</span> 
-                    <span class="schedule-start">Aao</span>                  
-               </div> 
-                </div>
-                
-                <div class="schedule-card">
-               <div class="insidebox">
-                   <span class="schedule-tag">8:30 AM</span> 
-                    <span class="schedule-start">Khao</span>                  
-               </div> 
-                </div>
-                
-                <div class="schedule-card">
-               <div class="insidebox">
-                   <span class="schedule-tag">9:00 AM</span> 
-                    <span class="schedule-start">Khelo</span>                  
-               </div> 
-                </div>
-                
-                <div class="schedule-card">
-               <div class="insidebox">
-                   <span class="schedule-tag">1:00 PM</span> 
-                    <span class="schedule-start"> Jao</span>                  
-               </div> 
-                </div>
-                
-                <div class="schedule-card">
-               <div class="insidebox">
-                   <span class="schedule-tag">6:00 PM</span> 
-                    <span class="schedule-start">GHar jao</span>                  
-               </div> 
-                </div>
-                
-                <div class="schedule-card">
-               <div class="insidebox">
-                   <span class="schedule-tag">6:30 PM</span> 
-                    <span class="schedule-start">Sojao</span>                  
-               </div> 
-                </div>
-            </div>
-            </div>
-	</div>
-</div>
+        <script>
+            var loader = document.getElementById("preloader");
+            window.addEventListener("load", function() {
+                loader.style.display = "none"
+            })
+        </script>
 
-
-        
-
-
-
-            <script>
-
-                var loader = document.getElementById("preloader");
-                window.addEventListener("load", function () {
-                    loader.style.display = "none"
-                })
-
-            </script>
-
-            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-            <script src="index.js"></script>
-            <script>
-                AOS.init();
-            </script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="index.js"></script>
+        <script>
+            AOS.init();
+        </script>
 </body>
 
 </html>
