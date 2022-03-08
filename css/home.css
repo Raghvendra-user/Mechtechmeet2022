@@ -32,6 +32,12 @@
     color: #000;
 }
 
+.nav1 .links a {
+    margin-right: 25px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
 .nav1 .links .mainlink {
     color: #e0501b;
 }
@@ -170,12 +176,6 @@
         font-size: 15px;
         font-weight: 600;
     }
-}
-
-.nav1 .links a {
-    margin-right: 25px;
-    font-size: 12px;
-    font-weight: 600;
 }
 
 #preloader {
