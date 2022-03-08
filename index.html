@@ -35,6 +35,11 @@
             text-decoration: none !important;
         }
         
+        .logo {
+            height: 85px;
+            width: 135px;
+        }
+        
         .nav {
             position: fixed;
             z-index: 10;
@@ -325,8 +330,8 @@
                 margin-bottom: 14px;
             }
             .nav .links a {
-                margin-right: 25px;
-                font-size: 12px;
+                margin-right: 10px;
+                font-size: 15px;
                 font-weight: 600;
             }
             /* LANDING PAGE */
@@ -922,12 +927,14 @@
 </head>
 
 <body>
-    <div id="preloader"></div>
+    <!-- <div id="preloader"></div>
+     -->
     <div class="wrapper">
         <div class="nav">
-            <div class="logo">
+            <div>
                 <a href="index.html">
-                    <img src="img/logo.png" style="height: 60px" class="d-inline-block align-text-top" />
+                    <img src="img/logo.png" class="logo" class="d-inline-block align-text-top" />
+                    <!-- <h4>M<span style="color: #e0501b;"> T</span> M</h4> -->
                 </a>
             </div>
             <div class="links">
@@ -942,8 +949,8 @@
         <!-- LANDING PAGE -->
 
         <div class="landing">
-            <video style="position: absolute; top: 0; left: 0; width: 100%;" autoplay loop muted poster="../mechtechmeet_89345161_210407610159541_487153517.png">
-                <source src="img/MTM3.mp4" type="video/mp4">
+            <video style="position: absolute; top: 0; left: 0; width: 100%;" autoplay loop muted poster="img/mtm.jpg">
+                <source src="img/MTM.mp4" type="video/mp4">
             </video>
             <div class="landingText" data-aos="fade-up" data-aos-duration="1000">
 
@@ -959,7 +966,7 @@
             </div>
             <div class='landingImageContainer' style="z-index: 2;">
                 <div class="landingImage" data-aos="fade-down" data-aos-duration="2000">
-                    <img src="img/robot-waving.gif" alt="" />
+                    <!-- <img src="img/robot-waving.gif" alt="" /> -->
 
                 </div>
             </div>
