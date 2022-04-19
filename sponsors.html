@@ -24,112 +24,17 @@
             font-family: 'Source Sans Pro', sans-serif;
         }
         
-         ::selection {
-            background-color: #011bff;
+        .container1 {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 5px;
+            justify-content: space-around;
+            margin-top: 10%;
         }
         
-        .tabbed {
-            margin-top: 0px;
-            filter: blur(0px) !important;
-            width: 1000px;
-            margin: 50px auto;
-            color: black;
-            padding-top: 10%;
-        }
-        
-        .tabbed>input {
-            display: none;
-        }
-        
-        .tabbed>label {
-            display: block;
-            float: left;
-            padding: 12px 20px;
-            margin-right: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .tabbed>label:hover,
-        .tabbed>input:checked+label {
-            border-radius: 25px;
-            background: #0026ff;
-        }
-        
-        .tabs {
-            clear: both;
-            perspective: 1000px;
-        }
-        
-        .tabs>div {
-            width: 1000px;
-            position: absolute;
-            border: 4px solid #4ec6de;
-            padding: 10px 3px 40px;
-            line-height: 1.4em;
-            opacity: 0;
-            transform: rotateX(-20deg);
-            transform-origin: top center;
-            transition: opacity 0.3s, transform 1s;
-            z-index: 3;
-        }
-        
-        #tab-nav-1:checked~.tabs>div:nth-of-type(1),
-        #tab-nav-2:checked~.tabs>div:nth-of-type(2),
-        #tab-nav-3:checked~.tabs>div:nth-of-type(3),
-        #tab-nav-4:checked~.tabs>div:nth-of-type(4) {
-            transform: rotateX(0);
-            opacity: 1;
-            z-index: 1;
-        }
-        
-        @media only screen and (max-width: 600px) {
-            .tabbed {
-                margin-top: 150px;
-                width: 100%;
-            }
-            .tabs {
-                width: 100%;
-            }
-            .tabs div {
-                width: 100%;
-            }
-        }
-        /* gallery */
-        
-        #gallery {
-            padding-top: 40px;
-            @media screen and (min-width: 991px) {
-                padding: 60px 30px 0 30px;
-            }
-        }
-        
-        .img-wrapper {
-            position: relative;
-            margin-top: 15px;
-        }
-        
-        img {
-            width: 100%;
-        }
-        
-        i {
-            color: #fff;
-            font-size: 3em;
-        }
-        
-        img {
-            margin: 0;
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            padding: 5%;
-        }
-        
-        @media only screen and (max-width: 600px) {
-            img {
-                width: 60% !important;
-            }
+        .sponsor {
+            width: 30%;
+            margin: 5px;
         }
     </style>
 </head>
@@ -154,337 +59,24 @@
             </div>
         </div>
 
-        <div class="tabbed">
-            <input type="radio" name="tabs" id="tab-nav-1" checked>
-            <label for="tab-nav-1">2015</label>
-            <input type="radio" name="tabs" id="tab-nav-2">
-            <label for="tab-nav-2">2016</label>
-            <input type="radio" name="tabs" id="tab-nav-3">
-            <label for="tab-nav-3">2017</label>
-            <input type="radio" name="tabs" id="tab-nav-4">
-            <label for="tab-nav-4">2018</label>
-            <div class="tabs">
-                <div>
-                    <section class="s2">
-                        <div class="container-sm edSection">
-                            <div class="conatiner text-center mb-5">
-                                <h1 class="head" data-aos="fade-up" data-aos-delay="300">
-                                    Gallery
-                                </h1>
-                                <section id="gallery" data-aos="fade-up" data-aos-delay="300">
-                                    <div class="container">
-                                        <div id="image-gallery">
-                                            <div class="row">
-
-
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/900"><img src="img/raghvendra.png" class="img-responsive"></a>
-
-                                                    </div>
-
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/1000"><img src="img/raghvendra.png" class="img-responsive"></a>
-
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/1100"><img src="img/raghvendra.png" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/1200"><img src="img/raghvendra.png" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End row -->
-                                        </div>
-                                        <!-- End image gallery -->
-                                    </div>
-                                    <!-- End container -->
-                                </section>
-                            </div>
+        <div>
+            <div class="container container1">
+                <img class="sponsor" src="img/brainwave.png" alt="Example image">
+                <img class="sponsor" src="img/cafeBites.png" alt="Example image">
+                <img class="sponsor" src="img/ec.png" alt="Example image">
+                <img class="sponsor" src="img/funRun.png" alt="Example image">
+                <img class="sponsor" src="img/perfect.png" alt="Example image">
+                <img class="sponsor" src="img/programmerPoint.png" alt="Example image">
+                <img class="sponsor" src="img/sigma.png" alt="Example image">
 
 
 
-                        </div>
-                    </section>
-                </div>
-                <div>
-                    <section class="s2">
-                        <div class="container-sm edSection">
-                            <div class="conatiner text-center mb-5">
-                                <h1 class="head" data-aos="fade-up" data-aos-delay="300">
-                                    Gallery
-                                </h1>
-                                <section id="gallery" data-aos="fade-up" data-aos-delay="300">
-                                    <div class="container">
-                                        <div id="image-gallery">
-                                            <div class="row">
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/500"><img src="https://unsplash.it/500" class="img-responsive"></a>
-
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/600"><img src="https://unsplash.it/600" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/700"><img src="https://unsplash.it/700" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/800"><img src="https://unsplash.it/800" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/900"><img src="https://unsplash.it/900" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/1000"><img src="https://unsplash.it/1000" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/1100"><img src="https://unsplash.it/1100" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/1200"><img src="https://unsplash.it/1200" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End row -->
-                                        </div>
-                                        <!-- End image gallery -->
-                                    </div>
-                                    <!-- End container -->
-                                </section>
-                            </div>
 
 
-
-                        </div>
-                    </section>
-                </div>
-                <div>
-                    <section class="s2">
-                        <div class="container-sm edSection">
-                            <div class="conatiner text-center mb-5">
-                                <h1 class="head" data-aos="fade-up" data-aos-delay="300">
-                                    Gallery
-                                </h1>
-                                <section id="gallery" data-aos="fade-up" data-aos-delay="300">
-                                    <div class="container">
-                                        <div id="image-gallery">
-                                            <div class="row">
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/500"><img src="https://unsplash.it/500" class="img-responsive"></a>
-
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/600"><img src="https://unsplash.it/600" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/700"><img src="https://unsplash.it/700" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/800"><img src="https://unsplash.it/800" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/900"><img src="https://unsplash.it/900" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/1000"><img src="https://unsplash.it/1000" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/1100"><img src="https://unsplash.it/1100" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/1200"><img src="https://unsplash.it/1200" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End row -->
-                                        </div>
-                                        <!-- End image gallery -->
-                                    </div>
-                                    <!-- End container -->
-                                </section>
-                            </div>
-
-
-
-                        </div>
-                    </section>
-                </div>
-                <div>
-                    <section class="s2">
-                        <div class="container-sm edSection">
-                            <div class="conatiner text-center mb-5">
-                                <h1 class="head" data-aos="fade-up" data-aos-delay="300">
-                                    Gallery
-                                </h1>
-                                <section id="gallery" data-aos="fade-up" data-aos-delay="300">
-                                    <div class="container">
-                                        <div id="image-gallery">
-                                            <div class="row">
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/500"><img src="https://unsplash.it/500" class="img-responsive"></a>
-
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/600"><img src="https://unsplash.it/600" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/700"><img src="https://unsplash.it/700" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/800"><img src="https://unsplash.it/800" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/900"><img src="https://unsplash.it/900" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/1000"><img src="https://unsplash.it/1000" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/1100"><img src="https://unsplash.it/1100" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                    <div class="img-wrapper">
-                                                        <a href="https://unsplash.it/1200"><img src="https://unsplash.it/1200" class="img-responsive"></a>
-                                                        <div class="img-overlay">
-                                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End row -->
-                                        </div>
-                                        <!-- End image gallery -->
-                                    </div>
-                                    <!-- End container -->
-                                </section>
-                            </div>
-
-
-
-                        </div>
-                    </section>
-                </div>
             </div>
         </div>
 
-        <!-- 
+
         <div class="footer-dark">
             <footer>
                 <div class="container">
@@ -508,20 +100,20 @@
                         <div class="col-md-6 item text">
                             <h3>Mech Tech Meet</h3>
 
-                            <p>lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum nesciunt aliquid est nulla corporis eaque perspiciatis, cupiditate, similique quis quidem a tenetur nemo nostrum obcaecati consectetur,
-                                sit blanditiis sint suscipit.</p>
+                            <p>We are a team of technocrats with an aim to promote a culture of learning, innovation and technical renaissance. We take it as our mission to spread awareness about the trends that are being followed in the current automative
+                                age in a way that the youth could enjoy.</p>
                         </div>
 
                     </div>
             </footer>
-            </div> -->
+            </div>
 
 
 
 
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.6/prefixfree.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.6/prefixfree.min.js"></script>
 </body>
 
 </html>
