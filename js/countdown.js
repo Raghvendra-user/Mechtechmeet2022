@@ -33,7 +33,7 @@
 
             //do something later when date is reached
             if (distance < 0) {
-                document.getElementById("headline").innerText = "MTM-X has been ended successfully !!";
+                document.getElementById("headline").innerText = "MTM-X has concluded successfully !!";
                 document.getElementById("countdown").style.display = "none";
                 // document.getElementById("content").style.display = "block";
                 clearInterval(x);
